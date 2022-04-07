@@ -1,0 +1,26 @@
+.header {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  &__h1 {
+    @apply text-4xl font-bold my-2 #{!important};
+  }
+}
+
+// https://tailwindcss.com/docs/using-with-preprocessors
+
+// For the best development experience,
+// we highly recommended that you use PostCSS exclusively, and that
+// you don’t use preprocessors like Sass or Less in your Tailwind projects.
+
+//preprocessors like Sass, Less, and Stylus run separately, before Tailwind.
+
+//This means that you can’t feed output from Tailwind’s theme() function into a Sass color function for example,
+// because the theme() function isn’t actually evaluated until your Sass has been
+//  compiled to CSS and fed into PostCSS.
+
+/* Use interpolation as a workaround
+
+.alert {
+  @apply bg-red-500 #{!important};
+} */
