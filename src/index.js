@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './styles/main.scss'
 import App from './App'
+
+import './index.css'
+import '@material-tailwind/react/tailwind.css'
+
 import { store } from './app/store'
 import { Provider } from 'react-redux'
 
