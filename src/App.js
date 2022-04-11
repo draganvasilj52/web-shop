@@ -10,7 +10,3 @@ function App() {
 }
 
 export default App
-
-// https://mui.com/getting-started/installation/
-// Roboto? npm install @fontsource/roboto
-// icon npm install @mui/icons-material
