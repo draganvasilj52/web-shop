@@ -13,7 +13,7 @@ const HeaderMiddle = () => {
           className="ml-3 absolute pointer-events-none"
         />
         <input
-          className="w-full text-base pl-10 placeholder-gray-500 text-black outline-none focus:placeholder-white"
+          className="w-full h-full text-base pl-10 placeholder-gray-500 text-black outline-none focus:placeholder-white"
           type="text"
           placeholder="Search for anything"
         />
