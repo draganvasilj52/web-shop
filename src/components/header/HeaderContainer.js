@@ -3,7 +3,7 @@ import HeaderMiddle from './headerMiddle/HeaderMiddle'
 import HeaderTopContainer from './headerTop/HeaderTopContainer'
 const HeaderContainer = () => {
   return (
-    <div className="flex flex-col w-4/5 mx-auto my-0">
+    <div className="flex flex-col container mx-auto my-0">
       <HeaderTopContainer />
 
       <HeaderMiddle />
