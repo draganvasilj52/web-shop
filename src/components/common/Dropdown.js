@@ -1,19 +1,28 @@
 import React from 'react'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { useState } from 'react'
-const Dropdown = () => {
-    const [isActive,setIsActive] = useState(false)
+const Dropdown = ({ title, spanProp, containerProp, categories }) => {
+  const [isActive, setIsActive] = useState(false)
   return (
-    <div className='w-80 relative'>
-    <div className='flex items-center'>Choose One <KeyboardArrowDownIcon onClick={() => setIsActive(!isActive)}/></div>
-    {isActive && <div className='absolute top-full p-5'>
-       <div className='dropdown-item'>React</div>
-       <div className='dropdown-item'>Vue</div>
-    </div>}
-   
-  
-  </div>
+    <div
+      className={`relative ${containerProp}`}
+      onClick={() => setIsActive(!isActive)}
+    >
+      <div className="flex items-center">
+        <span className={`${spanProp}`}>{title}</span> <KeyboardArrowDownIcon />
+      </div>
+      {isActive && (
+        <div className="flex flex-wrap w-96 absolute top-full  z-10 bg-white border-2 border-solid border-slate-200">
+          {categories.map((item, index) => (
+            <div className="h-auto w-1/3" key={index}>
+              {item}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
 export default Dropdown
+//https://tobiasahlin.com/blog/common-flexbox-patterns/

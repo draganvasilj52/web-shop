@@ -1,16 +1,20 @@
 import logo from '../../../assets/slika.png'
 import SearchIcon from '@mui/icons-material/Search'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import Dropdown from '../../common/Dropdown'
+import { useSelector } from 'react-redux'
 const HeaderMiddle = () => {
+  const categories = useSelector((state) => state.starter.categories)
   return (
     <div className="flex justify-center border-b border-solid border-neutral-200 pt-3 pb-4">
       <img className="w-28 h-12 object-contain" src={logo} alt="logo" />
-      <button className="text-sm h-12 w-24 flex items-center mx-1.5 p-2">
-        <span className="pr-1 leading-4 hover:cursor-pointer hover:text-blue-600">
-          Shop by category
-        </span>
-        <KeyboardArrowDownIcon />
-      </button>
+
+      <Dropdown
+        categories={categories}
+        title="Shop by category"
+        spanProp="pr-1 leading-4 hover:text-blue-600 "
+        containerProp="text-sm h-12 w-24 flex items-center mx-1.5 p-2 hover:cursor-pointer "
+      />
 
       <div className="w-2/4 relative flex items-center text-gray-500 focus-within:text-black border-2 border-solid border-black border-r border-r-gray-300">
         <SearchIcon
