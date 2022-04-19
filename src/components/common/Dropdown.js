@@ -32,4 +32,3 @@ const Dropdown = ({
 }
 
 export default Dropdown
-//https://tobiasahlin.com/blog/common-flexbox-patterns/

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 const HeaderMiddle = () => {
   const categories = useSelector((state) => state.starter.categories)
   return (
-    <div className="flex justify-center border-b border-solid border-neutral-200 pt-3 pb-4">
+    <div className="flex justify-center pt-3 pb-4">
       <img className="w-28 h-12 object-contain" src={logo} alt="logo" />
 
       <Dropdown
@@ -13,8 +13,8 @@ const HeaderMiddle = () => {
         title="Shop by category"
         spanProp="pr-1 leading-4 hover:text-blue-600 "
         containerProp="text-sm h-12 w-24 flex items-center mx-1.5 p-2 hover:cursor-pointer "
-        categoriesContainerProp="flex flex-wrap absolute top-full  z-10 bg-white border-2 border-solid border-slate-200"
-        categoriesItemProp="h-28 basis-2/6  shrink-0 grow-0 w-96"
+        categoriesContainerProp="flex min-w-max flex-wrap absolute top-full z-10 bg-white border-2 border-solid border-slate-200"
+        categoriesItemProp="h-14 basis-2/6 shrink-0 grow-0 "
       />
 
       <div className="w-2/4 relative flex items-center text-gray-500 focus-within:text-black border-2 border-solid border-black border-r border-r-gray-300">
@@ -32,8 +32,8 @@ const HeaderMiddle = () => {
       <Dropdown
         categories={categories}
         title="All Categories"
-        containerProp="text-xs flex items-center justify-between px-4 w-2/12 border-solid border-black border-y-2 border-r-2 border-l-0"
-        categoriesContainerProp="flex flex-col w-full flex-wrap absolute top-full  z-10 bg-white border-2 border-solid border-slate-200"
+        containerProp="text-xs flex items-center justify-between px-3 w-fit border-solid border-black border-y-2 border-r-2 border-l-0"
+        categoriesContainerProp="flex flex-col flex-wrap absolute top-full w-full right-0.5 z-10 bg-white border-2 border-solid border-slate-200"
         categoriesItemProp=""
       />
       <button className="cursor-pointer ml-1.5 py-2 px-4 bg-blue-600 text-white w-40">

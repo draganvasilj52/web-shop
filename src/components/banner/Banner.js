@@ -35,7 +35,7 @@ const Banner = () => {
   }
 
   return (
-    <div className="flex relative container mx-auto my-0">
+    <div className="flex relative">
       {featuredProducts.map(
         (item, index) =>
           index === currentIndex && (
