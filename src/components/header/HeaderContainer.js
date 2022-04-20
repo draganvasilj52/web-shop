@@ -4,7 +4,7 @@ import HeaderTopContainer from './headerTop/HeaderTopContainer'
 const HeaderContainer = () => {
   return (
     <div className="flex flex-col">
-      <div className="px-8 border-b border-solid border-neutral-200">
+      <div className="px-12 border-b border-solid border-neutral-200">
         <HeaderTopContainer />
       </div>
 

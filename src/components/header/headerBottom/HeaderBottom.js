@@ -7,12 +7,8 @@ const HeaderBottom = () => {
   const [showDropdown, setShowDropdown] = useState(false)
 
   return (
-    <div className="relative border-y border-solid border-neutral-200">
-      <ul
-        onMouseEnter={() => setShowDropdown(true)}
-        onMouseLeave={() => setShowDropdown(false)}
-        className={`text-xs flex justify-center px-12 `}
-      >
+    <div className="relative border-y border-solid border-neutral-200 px-12">
+      <ul className={`text-xs flex justify-center  `}>
         <li className="py-2 px-3 border-x border-transparent border-solid ">
           <span className="border-b-2 border-solid border-black pb-1.5 ">
             Home
@@ -24,11 +20,14 @@ const HeaderBottom = () => {
             Saved
           </span>
         </li>
+
         {categories.map((item) => (
           <li
             className={`py-2 px-3 border-x border-transparent border-solid ${
-              showDropdown === true && 'hover:border-gray-300 bg-white'
+              showDropdown === true && 'hover:border-gray-300 hover:bg-white'
             } `}
+            onMouseEnter={() => setShowDropdown(true)}
+            onMouseLeave={() => setShowDropdown(false)}
           >
             <span className="pb-1.5 hover:cursor-pointer hover:text-blue-600 hover:underline ">
               {item}
@@ -36,7 +35,11 @@ const HeaderBottom = () => {
           </li>
         ))}
         {showDropdown && (
-          <div className="bg-white absolute z-10 top-full w-full h-72 border-x-2 border-b-2 bg-slate-200"></div>
+          <div className="bg-white absolute z-10 top-full inset-x-0 w-full h-72 border-x-2 border-b-2 bg-slate-200">
+            <a href="#">Home</a>
+            <a href="#">Home</a>
+            <a href="#">Home</a>
+          </div>
         )}
       </ul>
     </div>

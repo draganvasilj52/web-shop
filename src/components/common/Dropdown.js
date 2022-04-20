@@ -8,6 +8,7 @@ const Dropdown = ({
   categories,
   categoriesContainerProp,
   categoriesItemProp,
+  iconSize,
 }) => {
   const [isActive, setIsActive] = useState(false)
   return (
@@ -15,8 +16,9 @@ const Dropdown = ({
       className={`relative  ${containerProp}`}
       onClick={() => setIsActive(!isActive)}
     >
-      <div className="flex items-center">
-        <span className={`${spanProp}`}>{title}</span> <KeyboardArrowDownIcon />
+      <div className={`flex items-center `}>
+        <span className={`${spanProp}`}>{title}</span>{' '}
+        <KeyboardArrowDownIcon sx={{ fontSize: iconSize }} />
       </div>
       {isActive && (
         <div className={`${categoriesContainerProp}`}>
