@@ -24,23 +24,23 @@ const HeaderBottom = () => {
         {categories.map((item) => (
           <li
             className={`py-2 px-3 border-x border-transparent border-solid ${
-              showDropdown === true && 'hover:border-gray-300 hover:bg-white'
-            } `}
+              showDropdown === true && 'hover:border-gray-300'
+            }`}
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
           >
-            <span className="pb-1.5 hover:cursor-pointer hover:text-blue-600 hover:underline ">
+            <span className="pb-1.5 hover:cursor-pointer hover:text-blue-600 hover:underline  ">
               {item}
             </span>
+            {showDropdown && (
+              <ul className="absolute z-10 top-full inset-x-0 w-full h-72 border-x-2 border-b-2 bg-slate-200">
+                <li>Home</li>
+                <li>About</li>
+                <li>Search</li>
+              </ul>
+            )}
           </li>
         ))}
-        {showDropdown && (
-          <div className="bg-white absolute z-10 top-full inset-x-0 w-full h-72 border-x-2 border-b-2 bg-slate-200">
-            <a href="#">Home</a>
-            <a href="#">Home</a>
-            <a href="#">Home</a>
-          </div>
-        )}
       </ul>
     </div>
   )
