@@ -2,6 +2,7 @@ import logo from '../../../assets/slika.png'
 import SearchIcon from '@mui/icons-material/Search'
 import Dropdown from '../../common/Dropdown'
 import { useSelector } from 'react-redux'
+import './hmiddle.css'
 const HeaderMiddle = () => {
   const categories = useSelector((state) => state.starter.categories)
   return (
@@ -13,7 +14,7 @@ const HeaderMiddle = () => {
         title="Shop by category"
         spanProp="pr-1 leading-4 hover:text-blue-600"
         containerProp="text-sm h-12 w-24 flex items-center ml-2 p-2"
-        categoriesContainerProp="flex min-w-max flex-wrap top-full z-20 bg-white border-2 border-solid border-slate-200 p-6"
+        categoriesContainerProp="flex min-w-max flex-wrap top-full z-20 bg-white border-2 border-solid border-slate-200 p-6 "
         categoriesItemProp="h-14 basis-2/6 shrink-0 grow-0 hover:cursor-pointer hover:underline hover:text-blue-600"
       />
 
@@ -32,10 +33,10 @@ const HeaderMiddle = () => {
       <Dropdown
         categories={categories}
         title="All Categories"
-        containerProp="text-xs flex items-center h-11 w-1/6 border-solid border-black border-y-2 border-r-2 border-l-0"
-        contentProp="w-full h-full justify-between px-2 "
-        categoriesContainerProp="flex flex-col top-full min-w-full z-30 bg-white border border-solid border-black "
-        categoriesItemProp="cursor-pointer  hover:bg-blue-500 hover:text-white"
+        containerProp="text-xs flex items-center h-11 border-solid border-black border-y-2 border-r-2 border-l-0 "
+        contentProp="w-full h-full justify-between px-2"
+        categoriesContainerProp="flex flex-col top-full z-30 middleitem bg-white border border-solid border-black "
+        categoriesItemProp="cursor-pointer hover:bg-blue-500 hover:text-white"
         iconSize={16}
       />
       <button className="cursor-pointer h-11 ml-1.5 py-2 px-4 bg-blue-600 text-white w-40">
