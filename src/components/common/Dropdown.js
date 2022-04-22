@@ -9,6 +9,7 @@ const Dropdown = ({
   categoriesContainerProp,
   categoriesItemProp,
   iconSize,
+  contentProp,
 }) => {
   const [isActive, setIsActive] = useState(false)
   return (
@@ -16,12 +17,12 @@ const Dropdown = ({
       className={`relative  ${containerProp}`}
       onClick={() => setIsActive(!isActive)}
     >
-      <div className={`flex items-center `}>
+      <div className={`flex items-center hover:cursor-pointer ${contentProp}`}>
         <span className={`${spanProp}`}>{title}</span>{' '}
         <KeyboardArrowDownIcon sx={{ fontSize: iconSize }} />
       </div>
       {isActive && (
-        <div className={`${categoriesContainerProp}`}>
+        <div className={`${categoriesContainerProp} absolute`}>
           {categories.map((item, index) => (
             <div className={` ${categoriesItemProp}`} key={index}>
               {item}
