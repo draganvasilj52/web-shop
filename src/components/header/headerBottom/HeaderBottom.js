@@ -25,7 +25,7 @@ const HeaderBottom = () => {
 
         {categories.map((item) => (
           <li
-            className={`item p-2 border-x border-transparent border-solid hover:border-gray-300 hover:bg-white`}
+            className={`z-10 item p-2 border-x border-transparent border-solid hover:border-gray-300 hover:bg-white`}
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem('')}
           >
