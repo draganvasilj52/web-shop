@@ -1,6 +1,7 @@
-import React from 'react'
+import { useRef } from 'react'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { useState } from 'react'
+import { useOutsideClick } from 'rooks'
 const Dropdown = ({
   title,
   spanProp,
@@ -12,10 +13,16 @@ const Dropdown = ({
   contentProp,
 }) => {
   const [isActive, setIsActive] = useState(false)
+  const ref = useRef()
+  function closeWithOutsideClick() {
+    setIsActive(false)
+  }
+  useOutsideClick(ref, closeWithOutsideClick)
   return (
     <div
       className={`relative  ${containerProp}`}
       onClick={() => setIsActive(!isActive)}
+      ref={ref}
     >
       <div className={`flex items-center hover:cursor-pointer ${contentProp}`}>
         <span className={`${spanProp}`}>{title}</span>{' '}
