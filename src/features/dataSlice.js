@@ -8,6 +8,7 @@ const initialState = {
     'Collectibles & Art',
     'Home&Garden',
     'Sports',
+    'Xiaomi',
   ],
 }
 

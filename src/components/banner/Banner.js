@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import image1 from '../../assets/today-offer.jpg'
 import image2 from '../../assets/ebay.jpg'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
-let count = 0
 const Banner = () => {
   const featuredProducts = [
     {
@@ -25,14 +24,24 @@ const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleOnNextClick = () => {
-    count = (count + 1) % featuredProducts.length
-    setCurrentIndex(count)
+    setCurrentIndex(
+      currentIndex === featuredProducts.length - 1 ? 0 : currentIndex + 1
+    )
   }
   const handleOnPrevClick = () => {
-    const productsLength = featuredProducts.length
-    count = (currentIndex + productsLength - 1) % productsLength
-    setCurrentIndex(count)
+    setCurrentIndex(currentIndex === 0 ? currentIndex + 1 : currentIndex - 1)
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (currentIndex === 0) {
+        setCurrentIndex(1)
+      } else {
+        setCurrentIndex(0)
+      }
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [currentIndex])
 
   return (
     <div className="flex relative mb-12">
