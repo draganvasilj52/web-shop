@@ -18,6 +18,7 @@ const Dropdown = ({
     setIsActive(false)
   }
   useOutsideClick(ref, closeWithOutsideClick)
+
   return (
     <div
       className={`relative  ${containerProp}`}

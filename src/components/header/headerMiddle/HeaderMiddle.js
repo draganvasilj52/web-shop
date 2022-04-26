@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import './hmiddle.css'
 const HeaderMiddle = () => {
   const categories = useSelector((state) => state.starter.categories)
+
   return (
     <div className="flex justify-center items-center pt-3 pb-4 px-12">
       <img className="w-28 h-12 object-contain" src={logo} alt="logo" />
