@@ -6,7 +6,7 @@ const BrandsHeadline = () => {
       <h2 className="text-2xl font-bold pr-5 ">Explore Popular Brands</h2>
       <div className="flex items-center hover:cursor-pointer hover:underline">
         <p className="text-xl pl-4 border-l-2 border-solid border-slate-100  ">
-          See all{' '}
+          See all
         </p>
         <ArrowForwardIcon className="ml-2" sx={{ fontSize: 24 }} />
       </div>

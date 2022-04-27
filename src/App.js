@@ -1,13 +1,15 @@
 import HeaderContainer from './components/header/HeaderContainer'
-import Banner from './components/banner/Banner'
+
 import Brands from './components/brands/Brands'
+import ThirdBanner from './components/banner/ThirdBanner'
 
 function App() {
   return (
     <div>
       <HeaderContainer />
-      <Banner />
+
       <Brands />
+      <ThirdBanner />
     </div>
   )
 }

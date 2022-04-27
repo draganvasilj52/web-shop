@@ -1,5 +1,4 @@
-.middleitem {
- margin-left: -1px;
- min-width: 130%;
-
+.middleItem {
+  min-width: 130%;
+  left: -1px;
 }
