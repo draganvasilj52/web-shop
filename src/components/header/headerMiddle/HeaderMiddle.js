@@ -19,7 +19,7 @@ const HeaderMiddle = () => {
         categoriesItemProp="h-14 basis-2/6 shrink-0 grow-0 hover:cursor-pointer hover:underline hover:text-blue-600"
       />
 
-      <div className="w-2/4 h-11 relative flex items-center text-gray-500 focus-within:text-black border-y-2 border-l-2 border-solid border-black border-r border-r-gray-300">
+      <div className="w-3/6 h-11 relative flex items-center text-gray-500 focus-within:text-black border-y-2 border-l-2 border-solid border-black border-r border-r-gray-300">
         <SearchIcon
           sx={{ fontSize: 18 }}
           className="ml-3 absolute pointer-events-none"
@@ -34,8 +34,8 @@ const HeaderMiddle = () => {
       <Dropdown
         categories={categories}
         title="All Categories"
-        containerProp="text-xs flex items-center h-11 border-solid border-black border-y-2 border-r-2 "
-        contentProp=" justify-between px-2"
+        containerProp="text-xs flex items-center w-1/6	 h-11 border-solid border-black border-y-2 border-r-2 "
+        contentProp="w-full h-full justify-between px-3"
         categoriesContainerProp="middleItem border border-black border-solid flex flex-col top-full z-30 bg-white "
         categoriesItemProp="cursor-pointer hover:bg-blue-500 hover:text-white"
         iconSize={16}

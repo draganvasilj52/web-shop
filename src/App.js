@@ -1,15 +1,15 @@
 import HeaderContainer from './components/header/HeaderContainer'
-
-import Brands from './components/brands/Brands'
+import PopularBrands from './components/brands/PopularBrands'
 import ThirdBanner from './components/banner/ThirdBanner'
+import PopularCategories from './components/brands/PopularCategories'
 
 function App() {
   return (
     <div>
       <HeaderContainer />
-
-      <Brands />
       <ThirdBanner />
+      <PopularBrands />
+      <PopularCategories />
     </div>
   )
 }
