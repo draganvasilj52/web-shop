@@ -11,6 +11,7 @@ const HeaderMiddle = () => {
       <img className="w-28 h-12 object-contain" src={logo} alt="logo" />
 
       <Dropdown
+        itemHoverProp
         categories={categories}
         title="Shop by category"
         spanProp="pr-1 leading-4 hover:text-blue-600"
@@ -34,7 +35,7 @@ const HeaderMiddle = () => {
       <Dropdown
         categories={categories}
         title="All Categories"
-        containerProp="text-xs flex items-center w-1/6	 h-11 border-solid border-black border-y-2 border-r-2 "
+        containerProp="text-xs flex items-center w-1/6 h-11 border-solid border-black border-y-2 border-r-2 "
         contentProp="w-full h-full justify-between px-3"
         categoriesContainerProp="middleItem border border-black border-solid flex flex-col top-full z-30 bg-white "
         categoriesItemProp="cursor-pointer hover:bg-blue-500 hover:text-white"

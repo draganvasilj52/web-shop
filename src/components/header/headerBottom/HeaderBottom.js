@@ -23,11 +23,12 @@ const HeaderBottom = () => {
           </span>
         </li>
 
-        {categories.map((item) => (
+        {categories.map((item, index) => (
           <li
             className={`z-10 item p-2 border-x border-transparent border-solid hover:border-gray-300 hover:bg-white`}
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem('')}
+            key={index}
           >
             <span className=" hover:cursor-pointer hover:text-blue-600 hover:underline  ">
               {item}

@@ -11,18 +11,27 @@ const Dropdown = ({
   categoriesItemProp,
   iconSize,
   contentProp,
+  itemHoverProp,
 }) => {
   const [isActive, setIsActive] = useState(false)
   const ref = useRef()
-  function closeWithOutsideClick() {
-    setIsActive(false)
-  }
-  useOutsideClick(ref, closeWithOutsideClick)
+
+  useOutsideClick(
+    ref,
+    !itemHoverProp
+      ? () => {
+          setIsActive(false)
+        }
+      : () => {}
+  )
 
   return (
     <div
       className={`relative  ${containerProp}`}
       onClick={() => setIsActive(!isActive)}
+      onMouseLeave={() => {
+        itemHoverProp && setIsActive(false)
+      }}
     >
       <div
         ref={ref}
