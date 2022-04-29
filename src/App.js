@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <HeaderContainer />
-
+      <CarouselBanner />
       <PopularBrands />
       <PopularCategories />
     </div>

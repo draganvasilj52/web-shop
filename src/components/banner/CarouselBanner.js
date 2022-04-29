@@ -22,6 +22,7 @@ const CarouselBanner = () => {
   ]
   return (
     <Carousel
+      className="mb-12"
       infiniteLoop
       autoPlay={true}
       useKeyboardArrows
@@ -31,7 +32,7 @@ const CarouselBanner = () => {
       showIndicators={false}
     >
       {featuredProducts.map((item, index) => (
-        <div key={index} className="flex mb-12">
+        <div key={index} className="flex ">
           <div
             className={`text-left flex flex-col p-8 customWidthOne ${
               index === 0 ? ' bg-red-700 space-y-6' : '  space-y-6 bg-blue-700'

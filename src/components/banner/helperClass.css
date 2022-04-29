@@ -4,3 +4,9 @@
 .customWidthOne {
   width: 38% !important;
 }
+
+.control-arrow {
+  top: 40% !important;
+  bottom: unset !important;
+  border-radius: 60% !important;
+}
