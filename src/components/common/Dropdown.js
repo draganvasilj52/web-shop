@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { useState } from 'react'
-import { useOutsideClick } from 'rooks'
+import onOutsideClickHook from '../../hooks/OutsideClickHook'
 const Dropdown = ({
   title,
   spanProp,
@@ -16,7 +16,7 @@ const Dropdown = ({
   const [isActive, setIsActive] = useState(false)
   const ref = useRef()
 
-  useOutsideClick(
+  onOutsideClickHook(
     ref,
     !itemHoverProp
       ? () => {
