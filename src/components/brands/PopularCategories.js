@@ -7,11 +7,7 @@ const PopularBrands = () => {
   return (
     <div className="flex flex-col px-6 ">
       <BrandsHeadline title="Explore Popular Categories" />
-      <div className="flex space-x-6">
-        {categories.map((item, index) => (
-          <BrandsItem key={index} title={item} />
-        ))}
-      </div>
+   
     </div>
   )
 }

@@ -1,15 +1,34 @@
 import BrandsItem from './brandsItem/BrandsItem'
-import { useSelector } from 'react-redux'
 import BrandsHeadline from './brandsHeadline/BrandsHeadline'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { getCategories } from '../../features/apiSlice'
 
 const PopularBrands = () => {
-  const categories = useSelector((state) => state.starter.categories)
-  return (
+  const [dataArray,setDataArray] = useState([])
+  const dispatch = useDispatch()
+  const posts = useSelector(state => state.categories.list)
+
+  useEffect(() => {
+    dispatch(getCategories())
+  }, [dispatch])
+  
+
+ /*  useEffect(() => {
+    fetch('https://fakestoreapi.com/products?limit=7')
+            .then(res=>res.json())
+            .then(data=>setDataArray(data))
+  }, [])
+
+  console.log(dataArray) */
+ 
+    return (
     <div className="flex flex-col px-6 mb-16">
       <BrandsHeadline title="Explore Popular Brands" />
       <div className="flex space-x-6 ">
-        {categories.map((item, index) => (
-          <BrandsItem key={index} title={item} />
+         { posts.map((item, index) => (
+          <BrandsItem key={index} item={item}  />
         ))}
       </div>
     </div>
