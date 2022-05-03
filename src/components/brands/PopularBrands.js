@@ -8,7 +8,7 @@ import { getCategories } from '../../features/apiSlice'
 const PopularBrands = () => {
   const [dataArray,setDataArray] = useState([])
   const dispatch = useDispatch()
-  const posts = useSelector(state => state.categories.list)
+  const posts = useSelector(state => state.listing.list)
 
   useEffect(() => {
     dispatch(getCategories())

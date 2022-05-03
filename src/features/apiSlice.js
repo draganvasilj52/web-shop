@@ -12,7 +12,7 @@ const apiSlice = createSlice({
 
     extraReducers: {
         [getCategories.fulfilled]: (state,action) => {
-            state.list.push(action.payload)
+            state.list = action.payload
         }
     }
 
