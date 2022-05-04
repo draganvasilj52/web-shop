@@ -5,6 +5,6 @@ import apiReducer from '../features/apiSlice'
 export const store = configureStore({
   reducer: {
     starter: dataReducer,
-    listing: apiReducer
+    categories: apiReducer,
   },
 })
