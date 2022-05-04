@@ -9,25 +9,25 @@ const initialState = {
 
 export const getCategories = createAsyncThunk(
   'categories/getCategories',
-  async () => {
-    return fetch('https://fakestoreapi.com/products?limit=7').then((res) =>
-      res.json()
+  async ({ limit }) => {
+    return fetch(`https://fakestoreapi.com/products?limit=${limit}`).then(
+      (res) => res.json()
     )
   }
 )
 
 /* export const getCategories = createAsyncThunk(
   'categories/getCategories',
-  async () => {
+  async ({ limit }) => {
     const response = await axiosInstance.get('/products', {
       params: {
-        limit: 7,
+        limit,
       },
     })
     return response.data
   }
-)
- */
+) */
+
 const apiSlice = createSlice({
   name: 'categories',
   initialState,

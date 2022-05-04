@@ -21,7 +21,7 @@ const PopularBrands = () => {
 
   useEffect(() => {
     if (postStatus === 'idle') {
-      dispatch(getCategories())
+      dispatch(getCategories({ limit: 7 }))
     }
   }, [postStatus, dispatch])
 
