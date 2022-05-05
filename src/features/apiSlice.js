@@ -7,12 +7,23 @@ const initialState = {
   list: [],
 }
 
-export const getCategories = createAsyncThunk(
+/* export const getCategories = createAsyncThunk(
   'categories/getCategories',
   async ({ limit }) => {
     return fetch(`https://fakestoreapi.com/products?limit=${limit}`).then(
       (res) => res.json()
     )
+  }
+)
+ */
+export const getCategories = createAsyncThunk(
+  'categories/getCategories',
+  async ({ limit }) => {
+    const response = await fetch(
+      `https://fakestoreapi.com/products?limit=${limit}`
+    )
+    const data = await response.json()
+    return data
   }
 )
 
@@ -39,8 +50,9 @@ const apiSlice = createSlice({
       })
       .addCase(getCategories.fulfilled, (state, action) => {
         state.status = 'succeeded'
+
         state.list = state.list.concat(action.payload)
-        // state.list = action.payload
+        //state.list = action.payload
       })
       .addCase(getCategories.rejected, (state, action) => {
         state.status = 'failed'
@@ -50,7 +62,5 @@ const apiSlice = createSlice({
 })
 
 export const selectAllPosts = (state) => state.categories.list
-export const getPostsStatus = (state) => state.categories.status
-export const getPostsError = (state) => state.categories.error
 
 export default apiSlice.reducer

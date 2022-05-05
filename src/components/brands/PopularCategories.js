@@ -2,19 +2,14 @@ import BrandsItem from './brandsItem/BrandsItem'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import {
-  getCategories,
-  selectAllPosts,
-  getPostsError,
-  getPostsStatus,
-} from '../../features/apiSlice'
+import { getCategories, selectAllPosts } from '../../features/apiSlice'
 import BrandsHeadline from './brandsHeadline/BrandsHeadline'
 
 const PopularBrands = () => {
   const dispatch = useDispatch()
   const posts = useSelector(selectAllPosts)
-  const postStatus = useSelector(getPostsStatus)
-  const error = useSelector(getPostsError)
+  const postStatus = useSelector((state) => state.categories.status)
+  const error = useSelector((state) => state.categories.error)
 
   console.log(posts)
   console.log(postStatus)
