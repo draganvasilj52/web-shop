@@ -1,7 +1,7 @@
 import BrandsItem from './brandsItem/BrandsItem'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { getCategories, selectAllPosts } from '../../features/apiSlice'
 import BrandsHeadline from './brandsHeadline/BrandsHeadline'
 
@@ -11,13 +11,20 @@ const PopularBrands = () => {
   const postStatus = useSelector((state) => state.categories.status)
   const error = useSelector((state) => state.categories.error)
 
-  console.log(posts)
-  console.log(postStatus)
+  const isFirstRunRef = useRef(false)
+ console.log(postStatus)
 
   useEffect(() => {
-    if (postStatus === 'idle') {
+    if(isFirstRunRef.current=== false){
+
+      isFirstRunRef.current = true
+       if (postStatus === 'idle') {
+ 
       dispatch(getCategories({ limit: 7 }))
+     
     }
+    }
+   
   }, [postStatus, dispatch])
 
   let content
