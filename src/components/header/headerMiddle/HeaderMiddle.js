@@ -14,10 +14,10 @@ const HeaderMiddle = () => {
         itemHoverProp
         categories={categories}
         title="Shop by category"
-        spanProp="pr-1 leading-4 hover:text-blue-600"
-        containerProp="text-sm h-12 w-24 flex items-center ml-2 p-2"
-        categoriesContainerProp="flex min-w-max flex-wrap top-full z-20 bg-white border-2 border-solid border-slate-200 p-6 "
-        categoriesItemProp="h-14 basis-2/6 shrink-0 grow-0 hover:cursor-pointer hover:underline hover:text-blue-600"
+        spanProp=" leading-4 hover:text-blue-600 pl-1"
+        containerProp="text-sm specHeight  w-24 flex  ml-2 pr-2 "
+        categoriesContainerProp="flex left flex-wrap top-full z-20 bg-white border-2 border-solid border-slate-200 p-6 "
+        categoriesItemProp="h-40 leftItem "
       />
 
       <div className="w-3/6 h-11 relative flex items-center text-gray-500 focus-within:text-black border-y-2 border-l-2 border-solid border-black border-r border-r-gray-300">

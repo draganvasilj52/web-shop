@@ -1,4 +1,3 @@
-
 import './items.css'
 
 const BrandsItem = ({ item }) => {
@@ -10,7 +9,7 @@ const BrandsItem = ({ item }) => {
         alt="bezzzee"
       />
 
-      <h3 className="min-w-full text-center mt-2.5 font-bold text-base group-hover:underline ">
+      <h3 className=" text-center mt-2.5 font-bold text-base group-hover:underline maxWidth">
         {item.title}
       </h3>
     </div>

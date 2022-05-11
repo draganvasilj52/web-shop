@@ -2,3 +2,17 @@
   min-width: 130%;
   left: -1px;
 }
+
+.left {
+  min-width: 670%;
+}
+
+.leftItem {
+  flex: 0 0 33.333%;
+  padding-right: 20px;
+}
+
+.specHeight {
+  height: 45px;
+  margin-top: -3px;
+}

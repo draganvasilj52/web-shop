@@ -1,3 +1,11 @@
 .item:hover {
   margin-bottom: -1px;
 }
+
+.minW {
+  min-width: 80%;
+}
+
+.buttonRadius {
+  border-radius: 45%;
+}

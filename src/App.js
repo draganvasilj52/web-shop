@@ -9,7 +9,7 @@ function App() {
       <HeaderContainer />
       <CarouselBanner />
       <PopularBrands />
-  <PopularCategories /> 
+      <PopularCategories />
     </div>
   )
 }

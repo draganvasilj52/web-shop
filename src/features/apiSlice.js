@@ -30,16 +30,12 @@ const initialState = {
 export const getCategories = createAsyncThunk(
   'categories/getCategories',
   async ({ limit }) => {
-
-       const response = await axiosInstance.get('/products', {
+    const response = await axiosInstance.get('/products', {
       params: {
         limit,
       },
     })
     return response.data
-    
-   
-   
   }
 )
 
@@ -56,7 +52,6 @@ const apiSlice = createSlice({
         state.status = 'succeeded'
 
         state.list = state.list.concat(action.payload)
-        //state.list = action.payload
       })
       .addCase(getCategories.rejected, (state, action) => {
         state.status = 'failed'

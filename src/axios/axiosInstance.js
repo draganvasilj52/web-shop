@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: `https://ffakestoreapi.com`,
+  baseURL: `https://fakestoreapi.com`,
 })

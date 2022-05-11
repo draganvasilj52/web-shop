@@ -6,3 +6,10 @@
   padding-right: 0.915%;
   width: 14.28%;
 }
+
+.maxWidth {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 130px;
+}
