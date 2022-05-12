@@ -1,9 +1,10 @@
 import BrandsItem from './brandsItem/BrandsItem'
 import BrandsHeadline from './brandsHeadline/BrandsHeadline'
-import { useEffect, useRef, useState } from 'react'
+
+import useHttp from '../../hooks/use-http'
 
 const PopularBrands = () => {
-  const [dataArray, setDataArray] = useState([])
+  /*  const [dataArray, setDataArray] = useState([])
   const isFirstRunRef = useRef(false)
   // const [isFirstRunState, setIsFirstRunState] = useState(false)
   console.log('popularBrands Component Render')
@@ -22,7 +23,9 @@ const PopularBrands = () => {
         .then((res) => res.json())
         .then((data) => setDataArray(data))
     }
-  }, [])
+  }, []) */
+
+  const data = useHttp('https://fakestoreapi.com/products?limit=7')
 
   /*   const getPopularBrands = async () => {
     const response = await fetch(
@@ -35,7 +38,7 @@ const PopularBrands = () => {
     <div className="flex flex-col px-6 mb-16">
       <BrandsHeadline title="Explore Popular Brands" />
       <div className="flex space-x-6 ">
-        {dataArray.map((item, index) => (
+        {data.map((item, index) => (
           <BrandsItem key={index} item={item} />
         ))}
       </div>
