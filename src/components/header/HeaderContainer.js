@@ -1,6 +1,6 @@
-import HeaderBottom from './headerBottom/HeaderBottom'
 import HeaderMiddle from './headerMiddle/HeaderMiddle'
 import HeaderTopContainer from './headerTop/HeaderTopContainer'
+import { Outlet } from 'react-router-dom'
 const HeaderContainer = () => {
   return (
     <div className="flex flex-col">
@@ -9,7 +9,7 @@ const HeaderContainer = () => {
       </div>
 
       <HeaderMiddle />
-      <HeaderBottom />
+      <Outlet />
     </div>
   )
 }

@@ -1,0 +1,11 @@
+.borderRadius {
+  border-radius: 13px;
+  font-size: 11px;
+
+  padding: 2px 4px;
+  z-index: 2;
+  text-align: center;
+  border: 1px solid #fff;
+  top: -4px;
+  right: -6px;
+}

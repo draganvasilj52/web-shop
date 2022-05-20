@@ -1,4 +1,7 @@
+import { useNavigate } from 'react-router-dom'
+
 const HeaderTopLeft = () => {
+  const navigate = useNavigate()
   return (
     <div className="flex text-xs space-x-5">
       <p className="pt-1 pb-1.5">
@@ -11,7 +14,10 @@ const HeaderTopLeft = () => {
           register
         </span>
       </p>
-      <p className="pt-1 pb-1.5 hover:underline hover:cursor-pointer">
+      <p
+        onClick={() => navigate('daily')}
+        className="pt-1 pb-1.5 hover:underline hover:cursor-pointer"
+      >
         Daily Deals
       </p>
       <p className="pt-1 pb-1.5 hover:underline hover:cursor-pointer">

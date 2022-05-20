@@ -1,4 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
+import img0 from '../assets/deals/item0.png'
+import img1 from '../assets/deals/item1.jpg'
+import img2 from '../assets/deals/item2.jpg'
+import img3 from '../assets/deals/item3.jpeg'
+import img4 from '../assets/deals/item4.jpg'
+import img5 from '../assets/deals/item5.jpg'
+import img6 from '../assets/deals/item6.jpg'
 
 const initialState = {
   categories: [
@@ -98,12 +105,81 @@ const initialState = {
       ],
     },
   ],
+  deals: [
+    {
+      id: 1,
+      dealName:
+        '$20/Mo Red Pocket Prepaid Phone Plan+Kit: Unlmtd Everything 8GB 5G/LTE',
+      dealPrice: 'US $240.00',
+      dealImage: img0,
+    },
+    {
+      id: 2,
+      dealName:
+        'iRobot Roomba E6 Vacuum Cleaning Robot E6198 Manufacturer Certified Refurbished',
+      dealPrice: 'US $149.99',
+      dealImage: img1,
+    },
+    {
+      id: 3,
+      dealName:
+        'NEW Apple iPad 10.2 9th Gen Retina Display 64GB WiFi Pick GRAY & SILVER + Stylus',
+      dealPrice: 'US $379.99',
+      dealImage: img2,
+    },
+    {
+      id: 4,
+      dealName:
+        "Dickies Men's 874 Original Fit Classic Work School Uniform Straight Leg Pants",
+      dealPrice: 'US $33.88',
+      dealImage: img3,
+    },
+    {
+      id: 5,
+      dealName:
+        'Apple iPhone 13 Pro 6.1" A2639 REAL Dual Sim 256GB Phone By FedEx',
+      dealPrice: 'US $1,547.58',
+      dealImage: img4,
+    },
+    {
+      id: 6,
+      dealName:
+        'iRobot Roomba i7 Vacuum Cleaning Robot - Manufacturer Certified Refurbished!',
+      dealPrice: 'US $349.99',
+      dealImage: img5,
+    },
+    {
+      id: 7,
+      dealName: 'Pokemon Evolving Skies Booster Box 36 packs Factory Sealed',
+      dealPrice: 'US $184.99',
+      dealImage: img6,
+    },
+  ],
+  shoppingCart: [],
 }
 
 const dataSlice = createSlice({
   name: 'data',
   initialState,
-  reducers: {},
+  reducers: {
+    addItemToShoppingCart(state, action) {
+      let newArray = [...state.shoppingCart]
+      const item = action.payload
+      const existingItem = newArray.find((x) => x.id === item.id)
+      if (!existingItem) {
+        newArray.push(item)
+      }
+      state.shoppingCart = [...newArray]
+    },
+    removeItemFromShoppingCart(state, action) {
+      let newArray = [...state.shoppingCart]
+      newArray = newArray.filter((x) => x.id !== action.payload)
+      state.shoppingCart = [...newArray]
+    },
+  },
 })
+
+export const { addItemToShoppingCart, removeItemFromShoppingCart } =
+  dataSlice.actions
 
 export default dataSlice.reducer

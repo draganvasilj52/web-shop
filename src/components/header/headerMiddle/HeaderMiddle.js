@@ -3,12 +3,20 @@ import SearchIcon from '@mui/icons-material/Search'
 import Dropdown from '../../common/Dropdown'
 import { useSelector } from 'react-redux'
 import './hmiddle.css'
+import { useNavigate } from 'react-router-dom'
 const HeaderMiddle = () => {
   const categories = useSelector((state) => state.starter.categories)
 
+  const navigate = useNavigate()
+
   return (
     <div className="flex justify-center items-center pt-3 pb-4 px-12">
-      <img className="w-28 h-12 object-contain" src={logo} alt="logo" />
+      <img
+        onClick={() => navigate('')}
+        className="w-28 h-12 object-contain cursor-pointer"
+        src={logo}
+        alt="logo"
+      />
 
       <Dropdown
         itemHoverProp

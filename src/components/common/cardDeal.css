@@ -1,0 +1,37 @@
+.spotlightDiv {
+  width: 50%;
+  height: 330px;
+}
+
+.spotlightImg {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+.spotlighttextDiv {
+  width: 50%;
+}
+
+.featuredDiv {
+  width: 35%;
+  height: 180px;
+}
+
+.featuredImg {
+  height: 100%;
+  width: 100%;
+
+  object-fit: contain;
+}
+
+.featuredtextDiv {
+  width: 65%;
+}
+
+.divSize {
+  max-width: 500px;
+  max-height: 500px;
+}
+.buttonWidth {
+  width: 24%;
+}

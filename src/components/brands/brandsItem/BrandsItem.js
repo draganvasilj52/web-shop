@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './items.css'
 
 const BrandsItem = ({ item }) => {
@@ -9,9 +10,12 @@ const BrandsItem = ({ item }) => {
         alt="bezzzee"
       />
 
-      <h3 className=" text-center mt-2.5 font-bold text-base group-hover:underline maxWidth">
+      <Link
+        to={`${item.id}`}
+        className=" text-center mt-2.5 font-bold text-base group-hover:underline maxWidth"
+      >
         {item.title}
-      </h3>
+      </Link>
     </div>
   )
 }
