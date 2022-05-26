@@ -24,8 +24,9 @@ const Deal = () => {
 
         <div className="flex flex-col pl-4 space-y-3 justify-center items-center">
           <p className="font-bold pt-2">{deal.dealName}</p>
+          <p>Quantity: {deal.quantity}</p>
           <p>
-            Price: <span className="font-bold"> {deal.dealPrice}</span>
+            Price: <span className="font-bold">US ${deal.dealPrice}</span>
           </p>
           <button
             onClick={() => {

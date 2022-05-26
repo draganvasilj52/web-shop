@@ -1,6 +1,7 @@
 import BrandsItem from './brandsItem/BrandsItem'
 import BrandsHeadline from './brandsHeadline/BrandsHeadline'
 import { useEffect, useRef, useState } from 'react'
+import axios from 'axios'
 
 const PopularBrands = () => {
   const [dataArray, setDataArray] = useState([])
@@ -10,7 +11,7 @@ const PopularBrands = () => {
   console.log('dataArray', dataArray)
   console.log('Ref', isFirstRunRef)
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (isFirstRunRef.current === false) {
       console.log('useEfffect Popular Brands')
       //   setIsFirstRunState(true)
@@ -21,6 +22,33 @@ const PopularBrands = () => {
       fetch('https://fakestoreapi.com/products?limit=7')
         .then((res) => res.json())
         .then((data) => setDataArray(data))
+    }
+  }, []) */
+
+  useEffect(() => {
+    let source = axios.CancelToken.source()
+    if (isFirstRunRef.current === false) {
+      isFirstRunRef.current = true
+
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(
+            'https://fakestoreapi.com/products?limit=7',
+            {
+              cancelToken: source.token,
+            }
+          )
+          console.log('got response')
+          setDataArray(response.data)
+        } catch (error) {
+          throw error
+        }
+      }
+      fetchData()
+      return () => {
+        console.log('unmounting')
+        source.cancel()
+      }
     }
   }, [])
 

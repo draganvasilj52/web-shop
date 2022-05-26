@@ -3,9 +3,9 @@ module.exports = {
   theme: {
     extend: {
       minWidth: {
-        '24': '6rem',
+        24: '6rem',
       },
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 }

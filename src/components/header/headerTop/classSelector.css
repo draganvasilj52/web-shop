@@ -9,3 +9,7 @@
   top: -4px;
   right: -6px;
 }
+
+.dropdownItem:hover {
+  margin-bottom: -1px;
+}

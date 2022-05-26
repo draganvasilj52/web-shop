@@ -110,52 +110,61 @@ const initialState = {
       id: 1,
       dealName:
         '$20/Mo Red Pocket Prepaid Phone Plan+Kit: Unlmtd Everything 8GB 5G/LTE',
-      dealPrice: 'US $240.00',
+      dealPrice: 240.0,
       dealImage: img0,
+      quantity: 1,
     },
     {
       id: 2,
       dealName:
         'iRobot Roomba E6 Vacuum Cleaning Robot E6198 Manufacturer Certified Refurbished',
-      dealPrice: 'US $149.99',
+      dealPrice: 149.99,
       dealImage: img1,
+      quantity: 1,
     },
     {
       id: 3,
       dealName:
         'NEW Apple iPad 10.2 9th Gen Retina Display 64GB WiFi Pick GRAY & SILVER + Stylus',
-      dealPrice: 'US $379.99',
+      dealPrice: 379.99,
       dealImage: img2,
+      quantity: 1,
     },
     {
       id: 4,
       dealName:
         "Dickies Men's 874 Original Fit Classic Work School Uniform Straight Leg Pants",
-      dealPrice: 'US $33.88',
+      dealPrice: 33.88,
       dealImage: img3,
+      quantity: 1,
     },
     {
       id: 5,
       dealName:
         'Apple iPhone 13 Pro 6.1" A2639 REAL Dual Sim 256GB Phone By FedEx',
-      dealPrice: 'US $1,547.58',
+      dealPrice: 1.547,
       dealImage: img4,
+      quantity: 1,
     },
     {
       id: 6,
       dealName:
         'iRobot Roomba i7 Vacuum Cleaning Robot - Manufacturer Certified Refurbished!',
-      dealPrice: 'US $349.99',
+      dealPrice: 349.99,
       dealImage: img5,
+      quantity: 1,
     },
     {
       id: 7,
       dealName: 'Pokemon Evolving Skies Booster Box 36 packs Factory Sealed',
-      dealPrice: 'US $184.99',
+      dealPrice: 184.99,
       dealImage: img6,
+      quantity: 1,
     },
   ],
-  shoppingCart: [],
+  shoppingCart: localStorage.getItem('shoppingCart')
+    ? JSON.parse(localStorage.getItem('shoppingCart'))
+    : [],
 }
 
 const dataSlice = createSlice({
@@ -170,11 +179,13 @@ const dataSlice = createSlice({
         newArray.push(item)
       }
       state.shoppingCart = [...newArray]
+      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },
     removeItemFromShoppingCart(state, action) {
       let newArray = [...state.shoppingCart]
       newArray = newArray.filter((x) => x.id !== action.payload)
       state.shoppingCart = [...newArray]
+      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },
   },
 })
