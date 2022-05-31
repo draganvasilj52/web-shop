@@ -169,11 +169,9 @@ const initialState = {
       quantity: 1,
     },
   ],
-  /* shoppingCart:
-    localStorage.getItem('shoppingCart')
-      ? JSON.parse(localStorage.getItem('shoppingCart'))
-      : [], */
-  shoppingCart: [],
+  shoppingCart: localStorage.getItem('shoppingCart')
+    ? JSON.parse(localStorage.getItem('shoppingCart'))
+    : [],
 }
 
 const dataSlice = createSlice({
@@ -183,13 +181,14 @@ const dataSlice = createSlice({
     setInputValueDefault(state, action) {
       let newArray = [...state.shoppingCart]
       const item = action.payload
-      console.log(item)
 
       const existingItem = newArray.find((x) => x.id === item.id)
+
       existingItem.quantity = item.inputValue
       existingItem.totalPrice = existingItem.dealPrice * existingItem.quantity
 
       state.shoppingCart = [...newArray]
+      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },
     incrementInputValue(state, action) {
       let newArray = [...state.shoppingCart]
@@ -201,6 +200,7 @@ const dataSlice = createSlice({
       existingItem.totalPrice = existingItem.dealPrice * existingItem.quantity
 
       state.shoppingCart = [...newArray]
+      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },
     decrementInputValue(state, action) {
       let newArray = [...state.shoppingCart]
@@ -211,6 +211,7 @@ const dataSlice = createSlice({
       existingItem.totalPrice = existingItem.dealPrice * existingItem.quantity
 
       state.shoppingCart = [...newArray]
+      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },
     /* addingItemQuantities(state, action) {
       let newArray = [...state.shoppingCart]
@@ -231,13 +232,13 @@ const dataSlice = createSlice({
         newArray.push(item)
       }
       state.shoppingCart = [...newArray]
-      //   localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
+      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },
     removeItemFromShoppingCart(state, action) {
       let newArray = [...state.shoppingCart]
       newArray = newArray.filter((x) => x.id !== action.payload)
       state.shoppingCart = [...newArray]
-      //  localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
+      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },
   },
 })

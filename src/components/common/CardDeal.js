@@ -34,7 +34,7 @@ const CardDeal = ({ deal, spotlight }) => {
         >
           {deal.dealName}
         </Link>
-        <p className="text-xl font-bold">{deal.dealPrice}</p>
+        <p className="text-xl font-bold">US ${deal.dealPrice}</p>
       </div>
     </div>
   )
