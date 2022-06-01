@@ -236,7 +236,8 @@ const dataSlice = createSlice({
     },
     removeItemFromShoppingCart(state, action) {
       let newArray = [...state.shoppingCart]
-      newArray = newArray.filter((x) => x.id !== action.payload)
+      const existingItem = newArray.find((x) => x.id === action.payload)
+      newArray = newArray.filter((x) => x.id !== existingItem.id)
       state.shoppingCart = [...newArray]
       localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },

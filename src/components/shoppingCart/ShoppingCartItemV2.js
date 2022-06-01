@@ -1,42 +1,17 @@
 import { useDispatch } from 'react-redux'
 import { removeItemFromShoppingCart } from '../../features/dataSlice'
 import { useEffect, useState } from 'react'
-import {
-  incrementInputValue,
-  decrementInputValue,
-  setInputValueDefault,
-} from '../../features/dataSlice'
 import Modal from '../common/Modal'
 import { Link } from 'react-router-dom'
+import NewInput from '../common/NewInput'
 
 const ShoppingCartItem = ({ item }) => {
   const [toggle, setToggle] = useState(false)
-  //const [inputValue, setInputValue] = useState(item.quantity)
-  // console.log(inputValue)
+
   const dispatch = useDispatch()
 
-  const handleIncrement = (item) => {
-    //  setInputValue((val) => val + 1)
-    dispatch(incrementInputValue(item.id))
-  }
-
-  const handleDecrement = (item) => {
-    //  setInputValue((val) => val - 1)
-
-    dispatch(decrementInputValue(item.id))
-  }
-
-  const handleInputChange = (inputValue, item) => {
-    // setInputValue(inputValue)
-    const data = {
-      inputValue,
-      id: item.id,
-    }
-    dispatch(setInputValueDefault(data))
-  }
-
   useEffect(() => {
-    if (item.quantity < 0) {
+    if (item.quantity <= 0) {
       dispatch(removeItemFromShoppingCart(item.id))
     }
   }, [item.quantity, dispatch, item.id])
@@ -56,27 +31,7 @@ const ShoppingCartItem = ({ item }) => {
           </Link>
         </div>
         <div className="pr-6 flex justify-center items-center items-center basis-2/5 space-x-8">
-          <div className="flex space-x-2 w-1/5">
-            <p
-              className="text-center cursor-pointer"
-              onClick={() => handleDecrement(item)}
-            >
-              -
-            </p>
-
-            <input
-              value={item.quantity}
-              onChange={(e) => handleInputChange(Number(e.target.value), item)}
-              className="w-6 border border-solid border-black text-center"
-            />
-
-            <p
-              className="text-center cursor-pointer"
-              onClick={() => handleIncrement(item)}
-            >
-              +
-            </p>
-          </div>
+          <NewInput item={item} />
           <p className="w-2/5 text-xl text-center">US ${item.totalPrice}</p>
           <div
             className="w-2/5 bg-blue-600 text-white p-2 text-center cursor-pointer text-sm "
