@@ -8,12 +8,15 @@ import NewInput from '../common/NewInput'
 const ShoppingCartItem = ({ item }) => {
   const [toggle, setToggle] = useState(false)
 
+  const [inputValue, setInputValue] = useState(item.quantity)
+
   const dispatch = useDispatch()
 
   useEffect(() => {
     if (item.quantity <= 0) {
       dispatch(removeItemFromShoppingCart(item.id))
     }
+    setInputValue(item.quantity)
   }, [item.quantity, dispatch, item.id])
 
   return (
@@ -31,7 +34,11 @@ const ShoppingCartItem = ({ item }) => {
           </Link>
         </div>
         <div className="pr-6 flex justify-center items-center items-center basis-2/5 space-x-8">
-          <NewInput item={item} />
+          <NewInput
+            item={item}
+            inputValue={inputValue}
+            setInputValue={setInputValue}
+          />
           <p className="w-2/5 text-xl text-center">US ${item.totalPrice}</p>
           <div
             className="w-2/5 bg-blue-600 text-white p-2 text-center cursor-pointer text-sm "

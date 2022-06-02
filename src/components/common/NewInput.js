@@ -1,14 +1,12 @@
-import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {
   incrementInputValue,
   decrementInputValue,
   setInputValueDefault,
 } from '../../features/dataSlice'
-const NewInput = ({ item }) => {
-  const dispatch = useDispatch()
 
-  const [inputValue, setInputValue] = useState(item.quantity)
+const NewInput = ({ item, inputValue, setInputValue }) => {
+  const dispatch = useDispatch()
 
   const handleKeyPress = (event, item, inputValue) => {
     if (event.key === 'Enter') {
