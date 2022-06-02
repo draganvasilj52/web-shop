@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import './classSelector.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import React from 'react'
 
 const HeaderTopRight = () => {
   const shoppingCart = useSelector((state) => state.starter.shoppingCart)
@@ -28,8 +29,8 @@ const HeaderTopRight = () => {
       <div className="border-x border-t border-transparent border-solid hover:border-gray-300">
         <NotificationsNoneIcon />
       </div>
-      <div
-        onClick={() => navigate('shoppingcart')}
+      <Link
+        to="shoppingcart"
         onMouseEnter={() => setOnHoverShoppingCart(true)}
         onMouseLeave={() => setOnHoverShoppingCart(false)}
         className="relative border-x border-t border-transparent border-solid hover:border-gray-300 dropdownItem hover:bg-white"
@@ -61,11 +62,14 @@ const HeaderTopRight = () => {
                     </div>
                   </Link>
                 ))}
-                <Link to="shoppingcart">
-                  <div className="text-sm p-3 bg-blue-600 text-white text-center mt-5">
+                <div>
+                  <div
+                    onClick={() => navigate('shoppingcart')}
+                    className="text-sm p-3 bg-blue-600 text-white text-center mt-5"
+                  >
                     View Cart
                   </div>
-                </Link>
+                </div>
               </div>
             )}
           </>
@@ -77,7 +81,7 @@ const HeaderTopRight = () => {
             </div>
           )
         )}
-      </div>
+      </Link>
     </div>
   )
 }
