@@ -32,3 +32,7 @@
   max-width: 500px;
   max-height: 500px;
 }
+
+.minInputHeight{
+  min-height: 24px;
+}

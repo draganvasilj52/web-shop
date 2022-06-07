@@ -11,5 +11,10 @@
 }
 
 .dropdownItem:hover {
-  margin-bottom: -1px;
+  margin-bottom: -8px;
+}
+
+.topPosition{
+  top:26px;
+  right:-1px;
 }

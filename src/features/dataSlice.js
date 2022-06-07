@@ -186,7 +186,7 @@ const dataSlice = createSlice({
 
       existingItem.quantity = item.inputValue
       existingItem.totalPrice = existingItem.dealPrice * existingItem.quantity
-
+     
       state.shoppingCart = [...newArray]
       localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },

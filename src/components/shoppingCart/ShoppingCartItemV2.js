@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { removeItemFromShoppingCart } from '../../features/dataSlice'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import Modal from '../common/Modal'
 import { Link } from 'react-router-dom'
 import NewInput from '../common/NewInput'
@@ -8,16 +8,7 @@ import NewInput from '../common/NewInput'
 const ShoppingCartItem = ({ item }) => {
   const [toggle, setToggle] = useState(false)
 
-  const [inputValue, setInputValue] = useState(item.quantity)
-
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    if (item.quantity <= 0) {
-      dispatch(removeItemFromShoppingCart(item.id))
-    }
-    setInputValue(item.quantity)
-  }, [item.quantity, dispatch, item.id])
 
   return (
     <div className="border border-solid border-gray-300 flex flex-col mt-6 ">
@@ -36,10 +27,8 @@ const ShoppingCartItem = ({ item }) => {
         <div className="pr-6 flex justify-center items-center items-center basis-2/5 space-x-8">
           <NewInput
             item={item}
-            inputValue={inputValue}
-            setInputValue={setInputValue}
           />
-          <p className="w-2/5 text-xl text-center">US ${item.totalPrice}</p>
+          <p className="w-2/5 text-xl text-center">US ${item.quantity >= 0 ? item.totalPrice.toFixed(2) : ''}</p>
           <div
             className="w-2/5 bg-blue-600 text-white p-2 text-center cursor-pointer text-sm "
             onClick={() => setToggle(true)}

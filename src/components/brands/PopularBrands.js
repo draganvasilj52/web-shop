@@ -45,10 +45,10 @@ const PopularBrands = () => {
         }
       }
       fetchData()
-      return () => {
+     /*  return () => {
         console.log('unmounting')
         source.cancel()
-      }
+      } */
     }
   }, [])
 

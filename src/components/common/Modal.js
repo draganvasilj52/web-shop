@@ -7,7 +7,7 @@ const Modal = ({ toggle, setToggle }) => {
           aria-hidden="true"
           className={`flex items-center justify-center ${
             !toggle && 'hidden'
-          } opactiy-25 bg-slate-300 overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-0 z-50 justify-center items-center h-modal md:h-full md:inset-0`}
+          } bg-opacity-70 bg-slate-300 overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-0 z-50 justify-center items-center h-modal md:h-full md:inset-0`}
         >
           <div className="flex items-center justify-center relative px-4 w-full max-w-2xl h-full md:h-auto ">
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">

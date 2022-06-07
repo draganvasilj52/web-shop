@@ -1,4 +1,4 @@
-import logo from '../../../assets/slika.png'
+import logo from '../../../assets/webshop.png'
 import SearchIcon from '@mui/icons-material/Search'
 import Dropdown from '../../common/Dropdown'
 import { useSelector } from 'react-redux'

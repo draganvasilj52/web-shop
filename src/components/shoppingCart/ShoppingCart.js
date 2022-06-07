@@ -11,7 +11,7 @@ const ShoppingCart = () => {
         <p className="font-bold text-3xl">ShoppingCart</p>
       ) : (
         <p className="font-bold text-3xl">
-          ShoppingCart ({shoppingCart.length} item)
+          ShoppingCart ({shoppingCart.reduce((a, b) => a + b.quantity, 0)} item)
         </p>
       )}
 
