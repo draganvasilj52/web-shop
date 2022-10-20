@@ -186,7 +186,7 @@ const dataSlice = createSlice({
 
       existingItem.quantity = item.inputValue
       existingItem.totalPrice = existingItem.dealPrice * existingItem.quantity
-     
+
       state.shoppingCart = [...newArray]
       localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },
@@ -213,17 +213,6 @@ const dataSlice = createSlice({
       state.shoppingCart = [...newArray]
       localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
     },
-    /* addingItemQuantities(state, action) {
-      let newArray = [...state.shoppingCart]
-      const item = action.payload
-      console.log(item)
-      const existingItem = newArray.find((x) => x.id === item.id)
-      existingItem.quantity = item.quantity
-      existingItem.totalPrice = existingItem.quantity * existingItem.dealPrice
-
-      state.shoppingCart = [...newArray]
-      // localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
-    }, */
     addItemToShoppingCart(state, action) {
       let newArray = [...state.shoppingCart]
       const item = action.payload

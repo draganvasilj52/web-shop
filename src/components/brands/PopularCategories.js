@@ -12,25 +12,23 @@ const PopularBrands = () => {
   const error = useSelector((state) => state.categories.error)
 
   const isFirstRunRef = useRef(false)
- console.log(postStatus)
+
+  // using redux thunk to get data from: https://fakestoreapi.com/products?limit=7
+  // isFirstRunRef is used here to experiment why use Effect calls twice in strict mode
 
   useEffect(() => {
-    if(isFirstRunRef.current=== false){
-
+    if (isFirstRunRef.current === false) {
       isFirstRunRef.current = true
-       if (postStatus === 'idle') {
- 
-      dispatch(getCategories({ limit: 7 }))
-     
+      if (postStatus === 'idle') {
+        dispatch(getCategories({ limit: 7 }))
+      }
     }
-    }
-   
   }, [postStatus, dispatch])
 
   let content
 
   if (postStatus === 'loading') {
-    content = 'čekaj'
+    content = 'Loading...'
   } else if (postStatus === 'succeeded') {
     content = posts.map((item, index) => <BrandsItem key={index} item={item} />)
   } else if (postStatus === 'failed') {

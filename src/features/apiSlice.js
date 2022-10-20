@@ -7,26 +7,6 @@ const initialState = {
   list: [],
 }
 
-/* export const getCategories = createAsyncThunk(
-  'categories/getCategories',
-  async ({ limit }) => {
-    return fetch(`https://fakestoreapi.com/products?limit=${limit}`).then(
-      (res) => res.json()
-    )
-  }
-) */
-
-/* export const getCategories = createAsyncThunk(
-  'categories/getCategories',
-  async ({ limit }) => {
-    const response = await fetch(
-      `https://fakestoreapi.com/products?limit=${limit}`
-    )
-    return response.json()
-
-  }
-)
- */
 export const getCategories = createAsyncThunk(
   'categories/getCategories',
   async ({ limit }) => {
